@@ -1,13 +1,22 @@
 package TextAnalyzer;
 
 public abstract class KeywordAnalyzer implements TextAnalyzer{
-    String [] keywords;
 
     protected abstract String [] getKeywords();
-    protected abstract Label getLabel(String text, String [] keywords);
+    protected abstract Label getLabel();
 
     public Label processText(String text){
-        return getLabel(text, getKeywords());
+        text = text.toLowerCase();
+        String [] keywords = getKeywords();
+        for(int i=0; i < keywords.length; i++)
+        {
+            if(text.contains(keywords[i]))
+            {
+                return getLabel();
+            }
+        }
+        return Label.OK;
     }
-
 }
+
+
