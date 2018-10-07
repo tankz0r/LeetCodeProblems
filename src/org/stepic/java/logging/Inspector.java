@@ -12,18 +12,18 @@ package org.stepic.java.logging;
 import static org.stepic.java.logging.Main.BANNED_SUBSTANCE;
 import static org.stepic.java.logging.Main.WEAPONS;
 
-public class Inspector implements MailService{
+public class Inspector  implements MailService {
 
-    public Sendable processMail(Sendable mail){
-        if (mail instanceof MailMessage){
-            if ((((MailMessage) mail).getMessage().contains(WEAPONS)) ||
-                    ( ((MailMessage) mail).getMessage().contains(BANNED_SUBSTANCE))){
-                throw new IllegalPackageException("error");
-            }
-            else if (((MailMessage) mail).getMessage().contains("stones")){
-                throw new StolenPackageException("error");
-            }
+    @Override
+    public Sendable processMail(Sendable mail) {
+        if(mail instanceof MailPackage) {
+            if (((MailPackage) mail).getContent().getContent().equals(WEAPONS) ||
+                    ((MailPackage) mail).getContent().getContent().equals(BANNED_SUBSTANCE))
+                throw new IllegalPackageException();
+            if (((MailPackage) mail).getContent().getContent().contains("stones"))
+                throw new StolenPackageException();
         }
         return mail;
     }
+
 }

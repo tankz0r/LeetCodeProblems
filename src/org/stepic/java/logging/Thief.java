@@ -10,7 +10,7 @@ Thief – вор, который ворует самые ценные посыл
 
 public class Thief implements MailService{
     protected int minPrice;
-    protected int StolenValue;
+    protected int StolenValue = 0;
 
     public Thief(int minPrice){
         this.minPrice = minPrice;
@@ -22,11 +22,14 @@ public class Thief implements MailService{
 
     public Sendable processMail(Sendable mail){
         if (mail instanceof MailPackage){
-            if (((MailPackage) mail).getContent().getPrice() > minPrice){
+            if (((MailPackage) mail).getContent().getPrice() >= minPrice){
                 StolenValue +=((MailPackage) mail).getContent().getPrice();
-                return new MailPackage(mail.getFrom(), mail.getTo(),
-                        new Package(String.format("stones instead of {0}",
-                                ((MailPackage) mail).getContent()),0));
+//                return new MailPackage(mail.getFrom(), mail.getTo(),
+//                        new Package(String.format("stones instead of {0}",
+//                                ((MailPackage) mail).getContent().getContent()),0));
+// why upperpart is not the same as :
+                Package fakePackage = new Package("stones instead of " + ((MailPackage) mail).getContent().getContent(), 0);
+                mail = new MailPackage(((MailPackage) mail).getFrom(), ((MailPackage) mail).getTo(), fakePackage);
             }
         }
         return mail;

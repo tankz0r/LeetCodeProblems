@@ -25,7 +25,7 @@ public class Spy implements MailService{
 
     public Sendable processMail(Sendable mail) {
         if (mail instanceof MailMessage){
-            if (mail.getFrom() == AUSTIN_POWERS)
+            if ((mail.getFrom().equals(AUSTIN_POWERS)) || (mail.getTo().equals(AUSTIN_POWERS)))
                 LOGGER.log(Level.WARNING, "Detected target mail correspondence: from {0} to {1} \"{2}\"",
                         new Object [] {mail.getFrom(), mail.getTo(), ((MailMessage) mail).getMessage()});
             else

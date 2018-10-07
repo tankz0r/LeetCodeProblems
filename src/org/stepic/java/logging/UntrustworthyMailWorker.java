@@ -11,22 +11,29 @@ processMail второго элемента, и т. д.) и метод getRealMa
 
 public class UntrustworthyMailWorker implements MailService{
     protected MailService [] MSs;
+    protected RealMailService rms;
+
+//    public UntrustworthyMailWorker(MailService [] MSs){
+//        this.MSs = MSs;
+//    }
+// do I need to do this way?
 
     public UntrustworthyMailWorker(MailService [] MSs){
-        this.MSs = MSs;
+        this.MSs = new MailService[MSs.length];
+        for(int i=0; i < MSs.length; i++) this.MSs[i] = MSs[i];
+        rms = new RealMailService();
     }
 
     @Override
     public Sendable processMail(Sendable mail){
-        Sendable result;
         for (MailService MS:MSs){
-            result = MS.processMail(mail);
-            mail = result;
+            mail = MS.processMail(mail);
         }
-        return mail;
+        return rms.processMail(mail);
     }
 
+
     public RealMailService getRealMailService(){
-        return new RealMailService();
+        return rms;
     }
 }
