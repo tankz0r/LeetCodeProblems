@@ -1,4 +1,4 @@
-public class exception_sqrt {
+public class TraceElement {
         public static void main(String[] args) {
             System.out.println(getCallerClassAndMethodName());
             anotherMethod();
