@@ -1,4 +1,4 @@
-package TextAnalyzer;
+package org.stepic.java.TextAnalyzer;
 
 public class NegativeTextAnalyzer extends KeywordAnalyzer{
     private String [] keywords;

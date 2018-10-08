@@ -1,4 +1,4 @@
-package ROBOT;
+package org.stepic.java.ROBOT;
 
 public class module1 {
     public static void moveRobot(RobotConnectionManager robotConnectionManager, int toX, int toY) {

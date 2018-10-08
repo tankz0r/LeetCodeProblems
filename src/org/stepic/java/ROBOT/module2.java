@@ -1,7 +1,4 @@
-package ROBOT;
-
-import java.math.*;
-import java.util.Arrays;
+package org.stepic.java.ROBOT;
 
 public class module2 {
     public static void main(String[] args) {

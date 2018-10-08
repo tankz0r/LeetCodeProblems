@@ -1,4 +1,4 @@
-package ROBOT;
+package org.stepic.java.ROBOT;
 
 public interface RobotConnection extends AutoCloseable {
     void moveRobotTo(int x, int y);

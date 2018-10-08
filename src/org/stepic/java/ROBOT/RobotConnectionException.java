@@ -1,4 +1,4 @@
-package ROBOT;
+package org.stepic.java.ROBOT;
 
 public class RobotConnectionException extends RuntimeException {
 

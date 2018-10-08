@@ -1,4 +1,4 @@
-package TextAnalyzer;
+package org.stepic.java.TextAnalyzer;
 
 public class TooLongTextAnalyzer implements TextAnalyzer{
     private int maxLength;

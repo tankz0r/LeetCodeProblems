@@ -1,4 +1,4 @@
-package core_algorithms; /**
+package org.stepic.java.core_algorithms; /**
         * Merges two given sorted arrays into one
         *
         * @param a1 first sorted array

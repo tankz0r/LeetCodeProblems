@@ -1,7 +1,6 @@
-package core_algorithms;
+package org.stepic.java.core_algorithms;
 
 import java.util.Arrays;
-import java.util.function.DoubleUnaryOperator;
 
 public class AsciiCharSequence implements CharSequence {
 

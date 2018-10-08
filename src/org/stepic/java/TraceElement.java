@@ -1,3 +1,5 @@
+package org.stepic.java;
+
 public class TraceElement {
         public static void main(String[] args) {
             System.out.println(getCallerClassAndMethodName());

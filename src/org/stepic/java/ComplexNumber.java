@@ -1,3 +1,5 @@
+package org.stepic.java;
+
 import java.util.Objects;
 
 public class ComplexNumber {

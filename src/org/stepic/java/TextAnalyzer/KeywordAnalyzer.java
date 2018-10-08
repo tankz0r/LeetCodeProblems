@@ -1,4 +1,4 @@
-package TextAnalyzer;
+package org.stepic.java.TextAnalyzer;
 
 public abstract class KeywordAnalyzer implements TextAnalyzer{
 
